@@ -45,7 +45,7 @@ const Home = () => {
           </Link>
           
           <a
-            href="https://drive.google.com/file/d/1Ozrv3gQGK22pw9u4Ow4gqmiaYqkIIKQt/view?usp=drive_link"
+            href="https://drive.google.com/file/d/113A6Zh57EapseGCgHmGv8f43FtjqdTTd/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="border-2 border-[#7E57C2] text-[#7E57C2] px-6 py-3 rounded-full font-semibold flex items-center justify-center hover:bg-[#7E57C2] hover:text-white transition-all duration-300"
