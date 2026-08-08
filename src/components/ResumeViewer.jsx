@@ -1,6 +1,7 @@
 import { AiOutlineDownload } from "react-icons/ai";
 import file from "../assets/cv.pdf";
 import { saveAs } from "file-saver";
+import { FaArrowRight, FaDownload, FaChevronDown } from "react-icons/fa";
 
 const ResumeViewer = () => {
   const handleDownload = () => {
