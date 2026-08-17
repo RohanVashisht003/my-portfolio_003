@@ -111,24 +111,35 @@ export const experience = [
       "Worked on various projects as a trainee"
     ],
   },
-  // {
-  //   date: "June-2021 - August-2022",
-  //   company: "TechMahindra",
-  //   position: "Associate-Customer Support",
-  //   description: [
-  //     "Resolved customer inquiries efficiently",
-  //     "Escalated issues to concerned teams",
-  //     "Ensured high customer satisfaction levels"
-  //   ],
-  // },
+  {
+    date: "June-2021 - August-2022",
+    company: "TechMahindra",
+    position: "Associate-Customer Support",
+    description: [
+      "Resolved customer inquiries efficiently",
+      "Escalated issues to concerned teams",
+      "Ensured high customer satisfaction levels"
+    ],
+  },
   {
     date: "June-2021 - September-2022",
-    company: "Remote",
-    position: "Freelance Web Developer",
+    company: "Coding Ninjas",
+    position: "CareerCamp Web Development Trainee (Parttime)",
     description: [
-      "Managed direct client communication, collaborated with client teams to understand and gather the requirements, and provided regular updates on project progress.",
-      "Built and deployed a full-stack business website for Himcab, handling end-to-end development from UI design to backend integration.",
-      "Developed a custom website for Sunpower, a US-based client, architecting responsive frontend components and integrating backend APIs for seamless data flow.",
+      "Gained practical experience in web development through various projects",
+      "Learned fundamental principles of web development",
+      "Assisted mentors in solving doubts of other trainees"
+    ],
+  },
+  {
+    date: "August-2022 - December-2022",
+    company: "Coding Ninjas",
+    position: "Teaching Assistant (Parttime)",
+    description: [
+      "Assisted more than 500 students in their coding journey",
+      "Solved doubts related to React.js, Node.js, JavaScript, CSS, and project setup",
+      "Resolved over 700 doubts in 4 months",
+      "Achieved Ninja TA title with 4.7/5 rating"
     ],
   },
   {
