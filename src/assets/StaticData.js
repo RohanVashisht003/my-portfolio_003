@@ -112,16 +112,6 @@ export const experience = [
     ],
   },
   {
-    date: "June-2021 - August-2022",
-    company: "TechMahindra",
-    position: "Associate-Customer Support",
-    description: [
-      "Resolved customer inquiries efficiently",
-      "Escalated issues to concerned teams",
-      "Ensured high customer satisfaction levels"
-    ],
-  },
-  {
     date: "June-2021 - September-2022",
     company: "Coding Ninjas",
     position: "CareerCamp Web Development Trainee (Parttime)",
@@ -159,12 +149,14 @@ export const experience = [
     company: "Times Network (BCCL), Noida",
     position: "Software Developer",
     description: [
-      "Engineer scalable full-stack solutions using React.js, Next.js, TypeScript, and Node.js",
-      "Power high-traffic production platforms with optimized performance",
-      "Architect reusable UI systems and modular component structures, accelerating feature delivery",
-      "Reduced development effort by 25% through modular architecture",
-      "Optimized Redis caching, reducing memory usage by 40% and API payload size by 77%",
-      "Built backend services supporting high-concurrency environments with improved response times"
+      "Engineered timesnowworld.com from scratch by implementing React.js with SSR architecture, reducing overallpage load time by 30%.",
+      "Architected reusable UI systems and modular component libraries using React.js, accelerating feature delivery and cutting development efforts.",
+      "Collaborated with cross-functional product, design, and backend engineering teams to deliver high-priority features under tight news-cycle deadlines.",
+      "Optimized Redis caching layers and memory allocation, reducing memory usage by 40% and decreasing API payloadsize by 77%.",
+      "Improved page speed performance across major web properties by 40% by implementing targeted web vitals optimizations.",
+      "Built scalable Node.js backend services supporting high-concurrency environments to deliver improved application response times.",
+      "Awarded the Ace Performer Award for delivering critical performance optimizations on timesnownews.com and timesnowhindi.com.",
+      "Recognized for architecting a unified mobile backend ecosystem that successfully consolidated legacy services for 3 core mobile apps (Times Now, Navbharat, TN-Shorts)."
     ],
   },
 ];

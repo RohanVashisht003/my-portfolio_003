@@ -10,7 +10,8 @@ import Portfolio from "./components/Portfolio";
 import Skill from "./components/Skill";
 function App() {
   return (
-    <div className="App">
+    <div className="App relative bg-theme-bg min-h-screen text-theme-text">
+      <div className="grid-bg" aria-hidden="true" />
       <Navbar />
       <Home />
       <About />

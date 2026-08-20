@@ -6,15 +6,15 @@ const Home = () => {
   return (
     <Element
       name="home"
-      className="w-full h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 relative"
+      className="w-full h-screen bg-theme-bg relative"
     >
-      <div className="max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full pb-0">
-        <p className="text-black-50 text-lg">Hi, my name is</p>
-        <h1 className="text-4xl sm:text-7xl font-bold text-gradient">
+      <div className="max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full pb-0 relative z-10">
+        <p className="text-theme-amber tracking-[0.2em] uppercase text-xs sm:text-sm font-semibold">Hi, my name is</p>
+        <h1 className="text-4xl sm:text-7xl font-bold text-theme-text">
           Rohan Sharma
         </h1>
         <div>
-          <h2 className="text-2xl sm:text-4xl font-bold text-black-50 pt-2 flex">
+          <h2 className="text-2xl sm:text-4xl font-bold text-theme-dim pt-2 flex">
             
             <Typewriter
               options={{ loop: true }}
@@ -29,7 +29,7 @@ const Home = () => {
             />
           </h2>
         </div>
-        <p className="text-black-50 py-4 leading-8 ">
+        <p className="text-theme-dim py-4 leading-8 ">
           Results-driven Full Stack Developer with around 4 years of experience building high-performance web applications at scale. Currently at Times Network.shipping multiple high-traffic news portals from the ground up. Recipient of the Ace Performer Award for driving significant performance improvements.
         </p>
         
@@ -38,7 +38,7 @@ const Home = () => {
             to="contact"
             smooth={true}
             duration={500}
-            className="bg-[#7E57C2] text-white px-6 py-3 rounded-full font-semibold flex items-center justify-center hover:bg-[#6D46B0] transition-all duration-300"
+            className="bg-theme-amber text-[#1a1305] px-6 py-3 rounded-md font-semibold flex items-center justify-center hover:bg-theme-amber-hover hover:-translate-y-0.5 transition-all duration-300 cursor-pointer"
           >
             Get In Touch
             <FaArrowRight className="ml-2" />
@@ -48,7 +48,7 @@ const Home = () => {
             href="https://drive.google.com/file/d/113A6Zh57EapseGCgHmGv8f43FtjqdTTd/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
-            className="border-2 border-[#7E57C2] text-[#7E57C2] px-6 py-3 rounded-full font-semibold flex items-center justify-center hover:bg-[#7E57C2] hover:text-white transition-all duration-300"
+            className="border border-theme text-theme-text px-6 py-3 rounded-md font-semibold flex items-center justify-center hover:border-theme-cyan hover:text-theme-cyan transition-all duration-300"
           >
             <FaDownload className="mr-2" />
             Resume
@@ -60,7 +60,7 @@ const Home = () => {
             to="about"
             smooth={true}
             duration={500}
-            className="text-[#7E57C2] hover:text-[#6D46B0] transition-colors duration-300"
+            className="text-theme-amber hover:text-theme-amber-hover transition-colors duration-300"
           >
             <FaChevronDown size={30} />
           </Link>

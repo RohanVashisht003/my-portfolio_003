@@ -13,8 +13,6 @@ const Experience = () => {
 
   const items = experience.slice().reverse();
 
-  // First item (most recent) starts collapsed, the rest start expanded —
-  // matches the reference design. Toggle any item by clicking it.
   const [openIndex, setOpenIndex] = useState(
     items.reduce((acc, _, i) => {
       acc[i] = i !== 0;
@@ -29,23 +27,19 @@ const Experience = () => {
   return (
     <Element
       name="experience"
-      className="min-h-screen text-gray-800 py-32"
-      style={{
-        background:
-          "radial-gradient(80% 50% at 50% -20%, #2563eb1f, #0000), radial-gradient(60% 40% at 80%, #7c3aed0f, #0000)",
-      }}
+      className="min-h-screen text-theme-text py-32 bg-theme-bg relative z-10"
     >
       <div className="max-w-screen-lg mx-auto px-8 py-4 flex flex-col justify-center h-full">
-        <h1 className="text-4xl font-bold inline  text-gradient text-center">
+        <p className="section-tag text-center">Experience</p>
+        <h1 className="text-4xl font-bold inline text-theme-text text-center">
           Experience
         </h1>
-        <p className="text-xl py-6 text-gray-600 text-center">
+        <p className="text-xl py-6 text-theme-dim text-center">
           Experienced professional with a proven track record of success
         </p>
 
         <div className="relative mt-6">
-          {/* vertical timeline line */}
-          <div className="absolute left-[7px] top-2 bottom-2 w-[2px] bg-blue-100" />
+          <div className="absolute left-[7px] top-2 bottom-2 w-px bg-gradient-to-b from-theme-amber to-theme" />
 
           <div className="flex flex-col gap-8">
             {items.map((data, index) => {
@@ -53,33 +47,31 @@ const Experience = () => {
 
               return (
                 <div key={index} className="relative pl-14">
-                  {/* timeline dot */}
-                  <span className="absolute left-0 top-8 w-4 h-4 rounded-full border-2 border-blue-500 bg-white" />
+                  <span className="absolute left-0 top-8 w-4 h-4 rounded-full border-2 border-theme-amber bg-theme-bg" />
 
                   <div
-                    className="rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden"
+                    className="rounded-[10px] border border-theme bg-theme-panel overflow-hidden"
                     data-aos="fade-up"
                     data-aos-duration="600"
                   >
-                    {/* header */}
                     <button
                       type="button"
                       onClick={() => toggle(index)}
                       className="w-full flex items-start justify-between gap-4 p-6 text-left"
                     >
                       <div>
-                        <h3 className="text-xl font-semibold text-gray-900">
+                        <h3 className="text-xl font-semibold text-theme-text">
                           {data.company}
                         </h3>
-                        <p className="text-sm mt-1 text-gray-500">
-                          <span className="text-blue-600 font-medium">
+                        <p className="text-sm mt-1 text-theme-dim">
+                          <span className="text-theme-cyan font-medium">
                             {data.position}
                           </span>
                           {data.location && <> · {data.location}</>}
                           {data.date && <> · {data.date}</>}
                         </p>
                       </div>
-                      <span className="text-gray-400 mt-1 shrink-0">
+                      <span className="text-theme-dim mt-1 shrink-0">
                         {isOpen ? (
                           <ChevronUp size={18} />
                         ) : (
@@ -88,14 +80,13 @@ const Experience = () => {
                       </span>
                     </button>
 
-                    {/* expandable body */}
                     {isOpen && (
-                      <div className="px-6 pb-6 border-t border-gray-100 pt-5">
+                      <div className="px-6 pb-6 border-t border-theme pt-5">
                         {data.image && (
                           <img
                             src={data.image}
                             alt={`${data.company} preview`}
-                            className="w-28 h-16 object-cover rounded-lg border border-gray-200 mb-4"
+                            className="w-28 h-16 object-cover rounded-lg border border-theme mb-4"
                           />
                         )}
 
@@ -104,16 +95,16 @@ const Experience = () => {
                             {data.description.map((line, i) => (
                               <li
                                 key={i}
-                                className="flex gap-2 text-[15px] leading-relaxed text-gray-600"
+                                className="flex gap-2 text-[15px] leading-relaxed text-theme-dim"
                               >
-                                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0" />
+                                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-theme-amber shrink-0" />
                                 <span>{line}</span>
                               </li>
                             ))}
                           </ul>
                         ) : (
                           data.description && (
-                            <p className="text-[15px] leading-relaxed text-gray-600">
+                            <p className="text-[15px] leading-relaxed text-theme-dim">
                               {data.description}
                             </p>
                           )
@@ -124,7 +115,7 @@ const Experience = () => {
                             {data.skills.map((skill, i) => (
                               <span
                                 key={i}
-                                className="text-xs font-medium text-blue-700 bg-blue-50 border border-blue-100 rounded-full px-3 py-1"
+                                className="text-xs font-medium text-theme-dim bg-white/[0.03] border border-theme rounded-md px-3 py-1"
                               >
                                 {skill}
                               </span>

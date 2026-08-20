@@ -11,62 +11,56 @@ const Portfolio = () => {
     return project.category === filter;
   });
 
+  const filterClass = (active) =>
+    `px-6 py-2 rounded-md font-semibold transition-all duration-300 ${
+      active
+        ? "bg-theme-amber text-[#1a1305]"
+        : "bg-theme-panel border border-theme text-theme-dim hover:border-theme-cyan hover:text-theme-cyan"
+    }`;
+
   return (
     <Element
       name="portfolio"
-      className="w-full radial-gradient(80% 50% at 50% -20%, #2563eb1f, #0000), radial-gradient(60% 40% at 80%, #7c3aed0f, #0000); py-32"
+      className="w-full bg-theme-bg py-32 relative z-10"
     >
-      <div className="max-w-screen-xl mx-auto px-8 py-4 flex flex-col justify-center h-full text-black">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold inline text-gradient">
+      <div className="max-w-screen-xl mx-auto px-8 py-4 flex flex-col justify-center h-full text-theme-text">
+        <div>
+          <p className="section-tag">Work</p>
+          <h1 className="text-4xl font-bold inline text-theme-text">
             Projects
           </h1>
-          <p className="py-6 text-gray-600">
+          <p className="py-6 text-theme-dim">
             High-traffic news portals and full-stack applications.
           </p>
         </div>
 
-        {/* Filter Buttons */}
-        <div className="flex gap-4 mb-8">
+        <div className="flex gap-4 mb-8 flex-wrap">
           <button
             onClick={() => setFilter("all")}
-            className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
-              filter === "all"
-                ? "bg-[#7E57C2] text-white"
-                : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-            }`}
+            className={filterClass(filter === "all")}
           >
             All Projects
           </button>
           <button
             onClick={() => setFilter("professional")}
-            className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
-              filter === "professional"
-                ? "bg-[#7E57C2] text-white"
-                : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-            }`}
+            className={filterClass(filter === "professional")}
           >
             Professional
           </button>
           <button
             onClick={() => setFilter("personal")}
-            className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
-              filter === "personal"
-                ? "bg-[#7E57C2] text-white"
-                : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-            }`}
+            className={filterClass(filter === "personal")}
           >
             Personal
           </button>
         </div>
 
-        {/* Professional Projects Subsection */}
         {(filter === "all" || filter === "professional") && (
           <div className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-800 mb-2">
+            <h2 className="text-2xl font-bold text-theme-text mb-2">
               Professional Projects
             </h2>
-            <p className="text-gray-600 mb-6">
+            <p className="text-theme-dim mb-6">
              
             </p>
             
@@ -76,7 +70,7 @@ const Portfolio = () => {
                 .map((work, index) => (
                   <div
                     key={index}
-                    className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                    className="bg-theme-panel border border-theme rounded-[10px] overflow-hidden hover:border-theme-cyan transition-colors duration-300"
                     data-aos="fade-up"
                     data-aos-duration={600 + (index * 100)}
                     data-aos-easing="linear"
@@ -103,23 +97,23 @@ const Portfolio = () => {
                         href={work.workUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm p-2 rounded-full hover:bg-white transition-colors duration-300"
+                        className="absolute top-3 right-3 bg-theme-bg/80 backdrop-blur-sm p-2 rounded-full hover:bg-theme-panel-2 transition-colors duration-300"
                       >
-                        <FaExternalLinkAlt size={16} className="text-[#7E57C2]" />
+                        <FaExternalLinkAlt size={16} className="text-theme-amber" />
                       </a>
                     </div>
                     <div className="p-5">
-                      <h3 className="text-lg font-bold text-gray-800 mb-2">
+                      <h3 className="text-lg font-bold text-theme-text mb-2">
                         {work.title}
                       </h3>
-                      <p className="text-sm text-gray-600 mb-4 line-clamp-4">
+                      <p className="text-sm text-theme-dim mb-4 line-clamp-4">
                         {work.description || "A full-stack application built with modern technologies."}
                       </p>
                       <div className="flex flex-wrap gap-2">
                         {work.tech.map((item) => (
                           <span
                             key={item}
-                            className="text-xs font-medium text-blue-700 bg-blue-50 border border-blue-100 rounded-full px-2 py-1"
+                            className="text-xs font-medium text-theme-dim bg-white/[0.03] border border-theme rounded-md px-2 py-1"
                           >
                             {item}
                           </span>
@@ -132,13 +126,12 @@ const Portfolio = () => {
           </div>
         )}
 
-        {/* Personal Projects Subsection */}
         {(filter === "all" || filter === "personal") && (
           <div>
-            <h2 className="text-2xl font-bold text-gray-800 mb-2">
+            <h2 className="text-2xl font-bold text-theme-text mb-2">
               Personal Projects
             </h2>
-            <p className="text-gray-600 mb-6">
+            <p className="text-theme-dim mb-6">
               Side projects and experimental work
             </p>
             
@@ -148,7 +141,7 @@ const Portfolio = () => {
                 .map((work, index) => (
                   <div
                     key={index}
-                    className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                    className="bg-theme-panel border border-theme rounded-[10px] overflow-hidden hover:border-theme-cyan transition-colors duration-300"
                     data-aos="fade-up"
                     data-aos-duration={600 + (index * 100)}
                     data-aos-easing="linear"
@@ -175,23 +168,23 @@ const Portfolio = () => {
                         href={work.workUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm p-2 rounded-full hover:bg-white transition-colors duration-300"
+                        className="absolute top-3 right-3 bg-theme-bg/80 backdrop-blur-sm p-2 rounded-full hover:bg-theme-panel-2 transition-colors duration-300"
                       >
-                        <FaExternalLinkAlt size={16} className="text-[#7E57C2]" />
+                        <FaExternalLinkAlt size={16} className="text-theme-amber" />
                       </a>
                     </div>
                     <div className="p-5">
-                      <h3 className="text-lg font-bold text-gray-800 mb-2">
+                      <h3 className="text-lg font-bold text-theme-text mb-2">
                         {work.title}
                       </h3>
-                      <p className="text-sm text-gray-600 mb-4 line-clamp-2">
+                      <p className="text-sm text-theme-dim mb-4 line-clamp-2">
                         {work.description || "A full-stack application built with modern technologies."}
                       </p>
                       <div className="flex flex-wrap gap-2">
                         {work.tech.slice(0, 3).map((item) => (
                           <span
                             key={item}
-                            className="text-xs font-medium text-blue-700 bg-blue-50 border border-blue-100 rounded-full px-2 py-1"
+                            className="text-xs font-medium text-theme-dim bg-white/[0.03] border border-theme rounded-md px-2 py-1"
                           >
                             {item}
                           </span>
@@ -204,10 +197,9 @@ const Portfolio = () => {
           </div>
         )}
 
-        {/* View More Button */}
         <div className="flex justify-center mt-10">
           <a
-            className="bg-[#7E57C2] text-white px-6 py-3 rounded-full font-semibold flex items-center hover:bg-[#6D46B0] transition-all duration-300"
+            className="bg-theme-amber text-[#1a1305] px-6 py-3 rounded-md font-semibold flex items-center hover:bg-theme-amber-hover hover:-translate-y-0.5 transition-all duration-300"
             href="https://github.com/RohanVashisht003?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"

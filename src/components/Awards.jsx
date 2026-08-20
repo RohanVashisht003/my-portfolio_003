@@ -22,14 +22,15 @@ const Awards = () => {
   return (
     <Element
       name="awards"
-      className="w-full min-h-screen radial-gradient(80% 50% at 50% -20%, #2563eb1f, #0000), radial-gradient(60% 40% at 80%, #7c3aed0f, #0000); py-32"
+      className="w-full min-h-screen bg-theme-bg py-32 relative z-10"
     >
-      <div className="max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full text-black">
+      <div className="max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full text-theme-text">
         <div className="text-center">
-          <h1 className="text-4xl font-bold inline  text-gradient">
+          <p className="section-tag">Awards</p>
+          <h1 className="text-4xl font-bold inline text-theme-text">
             Awards & Recognition
           </h1>
-          <p className="py-6">
+          <p className="py-6 text-theme-dim">
             Recognition for excellence and outstanding contributions
           </p>
         </div>
@@ -38,29 +39,29 @@ const Awards = () => {
           {awards.map((award, index) => (
             <div
               key={index}
-              className="bg-white/70 backdrop-blur-lg rounded-2xl shadow-lg border border-white/20 p-8 flex flex-col"
+              className="bg-theme-panel rounded-[10px] border border-theme p-8 flex flex-col"
               data-aos="fade-up"
               data-aos-duration="800"
               data-aos-easing="linear"
             >
               <div className="flex items-start justify-between mb-4">
-                <div className="text-[#7E57C2]">
+                <div className="text-theme-amber">
                   {award.icon}
                 </div>
-                <span className="text-sm font-semibold text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+                <span className="text-sm font-semibold text-theme-dim bg-theme-panel-2 border border-theme px-3 py-1 rounded-full">
                   {award.year}
                 </span>
               </div>
               
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">
+              <h3 className="text-2xl font-bold text-theme-text mb-2">
                 {award.title}
               </h3>
               
-              <p className="text-[#ff9500] font-semibold mb-4">
+              <p className="text-theme-cyan font-semibold mb-4">
                 {award.issuer}
               </p>
               
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-theme-dim leading-relaxed">
                 {award.description}
               </p>
             </div>
